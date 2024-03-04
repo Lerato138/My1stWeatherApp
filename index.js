@@ -5,6 +5,16 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
 }
+const convertBtn = document.getElementById("convert");
+
+convertBtn.addEventListener("click", function () {
+  // Celsius to Fahrenheit conversion formula
+  // (°C × 9/5) + 32 = °F
+  const celsius = parseFloat(prompt("Enter a temperature in Celsius"));
+  const fahrenheit = (celsius * 9) / 5 + 32;
+
+  alert(`${celsius}°C is ${fahrenheit}°F`);
+});
 
 function search(event) {
   event.preventDefault();
@@ -37,7 +47,7 @@ function formatDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
 
   let formattedDay = days[day];
